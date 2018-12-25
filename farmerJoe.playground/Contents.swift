@@ -51,6 +51,19 @@ var numberOfDays = 0
 //print("Il aura fallu \(numberOfDays) jours à Joe pour économiser \(benef) €")
 
 
+//initialiasiation d'un array vide, le type doit être préciser
+//var monTableauVide: [Int] = []
+
+//syntaxe pour initialisation avec default value
+var s = String() // s contient ""
+var i = Int()    // i contient 0
+var f = Float()  // f contient 0.0
+var d = Double() // d contient 0.0
+var b = Bool()   // b contient false
+
+// setup de la grange [lait, laine, blé]
+var barn = [0, 0, 0]
+
 while benef < planePrice  {
         // daily cost
         benef -= 4

@@ -99,3 +99,19 @@ while day < 30 {
     }
     day += 1
 }
+
+
+
+var notesDeLaClasse = [18, 4, 14, 15, 17, 15, 9, 20, 19, 11, 12, 14]
+notesDeLaClasse.append(13)
+
+var sum = 0
+for notes in notesDeLaClasse {
+    sum += notes
+}
+
+var students = notesDeLaClasse.count
+print(students)
+var moyenneClasse = sum / students
+print (sum)
+print("la moyenne des notes de la classe est \(moyenneClasse)")
