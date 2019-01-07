@@ -1,27 +1,27 @@
-//var str = "Hello world"
-//print (str)
-//
-//if str.count > 0 {
-//    print("texte est plus grand que 0")
-//} else {
-//    print("c'est plus petit ma gueule")
-//}
-//
-//for letter in str {
-//    print ("Lettre : \(letter)")
-//}
-//
-//
-//var nbr1 : Int = 10
-//var nbr2 : Int = 5
-//
-//print(nbr1)
-//print(nbr2)
-//
-//var calc = nbr1 + nbr2
-//print(calc)
-//
-//print("hello world")
+var str = "Hello world"
+print (str)
+
+if str.count > 0 {
+    print("texte est plus grand que 0")
+} else {
+    print("c'est plus petit ma gueule")
+}
+
+for letter in str {
+    print ("Lettre : \(letter)")
+}
+
+
+var nbr1 : Int = 10
+var nbr2 : Int = 5
+
+print(nbr1)
+print(nbr2)
+
+var calc = nbr1 + nbr2
+print(calc)
+
+print("hello world")
 
 
 
@@ -100,7 +100,15 @@ while day < 30 {
     day += 1
 }
 
+//initialiasiation d'un array vide, le type doit être précisé
+//var monTableauVide: [Int] = []
 
+//syntaxe pour initialisation avec default value
+var s = String() // s contient ""
+var i = Int()    // i contient 0
+var f = Float()  // f contient 0.0
+var d = Double() // d contient 0.0
+var b = Bool()   // b contient false
 
 var notesDeLaClasse = [18, 4, 14, 15, 17, 15, 9, 20, 19, 11, 12, 14]
 notesDeLaClasse.append(13)
@@ -115,3 +123,42 @@ print(students)
 var moyenneClasse = sum / students
 print (sum)
 print("la moyenne des notes de la classe est \(moyenneClasse)")
+
+
+var mesAmis = ["Pierre", "Paul", "Jacques"]
+for unAmi in mesAmis {
+    print("Salut \(unAmi) !")
+}
+
+// dictionnaires == hash (utilise key : value) [clé1: valeur1, clé2: valeur2]
+//[TypeDeLaClé: TypeDeLaValeur]
+var monDictionnaireVide = [String:Int]()
+
+var ages = ["Michel": 34, "Paul": 22, "Fred": 67, "Jean": 15]
+
+var countries = ["FR": "France", "IT": "Italie", "UK": "United King"]
+// Je modifie la valeur, car la clé "UK" existe déjà
+countries["UK"] = "United Kingdom"
+// J'ajoute une valeur, car la clé "ES" n'existe pas
+countries["ES"] = "Espagne"
+
+countries.removeValue(forKey: "ES")
+// L'association "ES": "Espagne" est supprimée
+countries.count
+
+//for (cle, valeur) in dictionnaire {
+//    // Dans le code, on peut utiliser la clé et la valeur
+//}
+
+for (code, country) in countries {
+    print("Le pays \(country) a pour code \(code)")
+}
+
+
+var heights = ["papa": 1.78, "celeste": 1.73, "iris": 1.64, "ambroise": 1.81, "maman": 1.71]
+var totalHeight = 0.0
+for (name, height) in heights {
+    totalHeight += height
+    print("\(name) mesure \(height)m")
+}
+print(" la famille mesure  \(totalHeight)m au total")

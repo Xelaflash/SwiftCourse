@@ -8,28 +8,8 @@ print(message)
 
 
 var benef: Double = 0.0
-let dailyCost: Double = 4
+//let dailyCost: Double = 4
 var numberOfDays = 0
-
-
-//for day in 1...30 {
-//    // daily cost
-//    benef -= 4
-//    if day == 1 {
-//        // selling blé
-//        benef += (100 * 0.3)
-//    } else if  day == 10 || day == 20 {
-//        // selling mouton
-//       benef += (30 * 1)
-//    } else {
-//        // traite vach quotidienne
-//        benef += 30 * 0.50
-//    }
-//}
-//print(" Benefice mensuel = \(benef) EUR")
-
-
-
 
 // calcul du nbres de jours pour que joe puisse partir
 // programme pas correct car ne prend pas en compte la notion de mois
@@ -51,32 +31,61 @@ var numberOfDays = 0
 //print("Il aura fallu \(numberOfDays) jours à Joe pour économiser \(benef) €")
 
 
-//initialiasiation d'un array vide, le type doit être préciser
-//var monTableauVide: [Int] = []
-
-//syntaxe pour initialisation avec default value
-var s = String() // s contient ""
-var i = Int()    // i contient 0
-var f = Float()  // f contient 0.0
-var d = Double() // d contient 0.0
-var b = Bool()   // b contient false
-
 // setup de la grange [lait, laine, blé]
-var barn = [0, 0, 0]
+
+//while benef < planePrice  {
+//        // daily cost
+//        benef -= 4
+//        if numberOfDays % 30 == 1 {
+//            // selling blé
+//            benef += (100 * 0.3)
+//        } else if  numberOfDays  % 30 == 10 || numberOfDays  % 30 == 20 {
+//            // selling mouton
+//            benef += (30 * 1)
+//        } else {
+//            // traite vach quotidienne
+//            benef += 30 * 0.50
+//        }
+//    numberOfDays += 1
+//}
+//print("Il aura fallu \(numberOfDays) jours à Joe pour économiser \(benef) €")
+
+
+
+
+// utilisation de la capacité de la grange
+var barn = ["milk": 0, "wheat": 0, "wool": 0]
 
 while benef < planePrice  {
-        // daily cost
-        benef -= 4
+    // daily cost
+    benef -= 4
+    
+    var barnSize = 0
+    for goods in barn {
+        barnSize += goods
+    }
+    
+    if barnSize >= 500 {
+        benef += Double(barn[0]) * 0.50
+        benef += Double(barn[1]) * 0.3
+        benef += Double(barn[2]) * 1
+        
+    // setup de la grange [lait, laine, blé]
+        barn = [0, 0, 0]
+    } else {
         if numberOfDays % 30 == 1 {
             // selling blé
-            benef += (100 * 0.3)
+            barn[1] += 100
         } else if  numberOfDays  % 30 == 10 || numberOfDays  % 30 == 20 {
             // selling mouton
-            benef += (30 * 1)
+            barn[2] += 30
         } else {
             // traite vach quotidienne
-            benef += 30 * 0.50
+            barn[0] += 30
         }
+        
+    }
     numberOfDays += 1
 }
+
 print("Il aura fallu \(numberOfDays) jours à Joe pour économiser \(benef) €")
