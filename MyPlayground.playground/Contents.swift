@@ -186,3 +186,41 @@ func returnValue() -> String {
     return "la fonction renvoie bien un string"
 }
 returnValue()
+
+
+//function avec paramètres
+func ajouteDeux(nombre: Int) -> Int {
+    return nombre + 2
+}
+print(ajouteDeux(nombre: 4))
+
+func sum(a: Int, b: Int, c: Int) -> Int {
+    return a + b + c
+}
+sum(a: 5, b: 4, c:2)
+
+
+
+func canWeSit(freeSeats: Int, passengers: Int) {
+    if freeSeats > passengers {
+        print("There is some free seats, so you can sit man!")
+    } else if freeSeats == passengers {
+        print("There is no more free seats...😤")
+    } else {
+        print("People are standing in the bus!! 🚌")
+    }
+}
+canWeSit(freeSeats: 10, passengers: 10)
+
+//utilisation de l'étiquette = permet de clarifier ds l'appel de la fonction
+// on appelle avec l'étiquette et non plus avec le params
+func allerAuCinema(avec nom: String) {
+    print("Je vais au cinéma avec " + nom)
+}
+allerAuCinema(avec: "Bob")
+
+// ici utilisation de la wild card "_" permet de se passer de nom params ou de l'étiquette lors de l'appel de la fonction
+func saluer(_ nom: String) {
+    print("Bonjour " + nom)
+}
+saluer("Jean")

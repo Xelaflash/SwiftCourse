@@ -22,21 +22,37 @@ func sell() {
     barn = ["milk": 0, "wheat": 0, "wool": 0]
 }
 
-func harvest() {
-    barn["wheat"]! += 100
+func harvest(nbrofProducts: Int) {
+    barn["wheat"]! += nbrofProducts
 }
 
-func mowSheep() {
-    barn["wool"]! += 30
+func mowSheep(nbrofProducts: Int) {
+    barn["wool"]! += nbrofProducts
 }
 
-func milkCows() {
-    barn["milk"]! += 30
+func milkCows(nbrofProducts: Int) {
+    barn["milk"]! += nbrofProducts
 }
 
 //========================
 //  MARK: - User Interaction
 //========================
+
+//function avec etiquette
+func readQuantity(of type: String) -> Int? {
+    print("Combien de \(type) avez vous récupéré ?"
+        + "\n =======================================")
+    
+    if let line = readLine() {
+        if let quantity = Int(line) {
+            return quantity
+        }
+    }
+    // Si la valeur n'a pas pu être interprétée, on le dit
+    print("Je n'ai pas compris.")
+    return nil
+}
+
 func addNewActivity() {
     print("================ Qu’avez-vous fait aujourd'hui? ==========="
         + "\n1. 🥕  J’ai nourri mes animaux"
@@ -52,11 +68,17 @@ func addNewActivity() {
         case "2":
             sell()
         case "3":
-            milkCows()
+            if let quantity = readQuantity(of: "🍼") {
+                milkCows(nbrofProducts: quantity)
+            }
         case "4":
-            harvest()
+            if let quantity = readQuantity(of: "🌾") {
+                harvest(nbrofProducts: quantity)
+            }
         case "5":
-            mowSheep()
+            if let quantity = readQuantity(of: "🐑") {
+                mowSheep(nbrofProducts: quantity)
+            }
         default:
             print("Je ne comprends pas. Merci de réessayer")
         }
