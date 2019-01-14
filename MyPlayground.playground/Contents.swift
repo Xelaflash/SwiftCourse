@@ -162,3 +162,27 @@ for (name, height) in heights {
     print("\(name) mesure \(height)m")
 }
 print(" la famille mesure  \(totalHeight)m au total")
+
+
+var jeSuisUnOptionnel: Int? = 12
+print(jeSuisUnOptionnel!)
+//optional binding ==> check si != nil puis crée une variable non optionelle
+if let variableDeballe = jeSuisUnOptionnel {
+    print(variableDeballe)
+}
+
+var jeSuisUnEntier: Int = 10
+print(jeSuisUnEntier)
+
+
+// creation de function
+func helloWorld() {
+    print("hello World")
+}
+//appel de la fonction
+helloWorld()
+
+func returnValue() -> String {
+    return "la fonction renvoie bien un string"
+}
+returnValue()

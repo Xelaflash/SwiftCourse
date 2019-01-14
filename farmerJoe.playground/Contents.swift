@@ -1,5 +1,4 @@
 // EXO Farmer JOE
-
 let planePrice: Double = 1499  // (double == float in swift / PS: float exists but not recommended)
 let dailyBenefit: Double = 10
 let resultJoe = planePrice / dailyBenefit
@@ -11,79 +10,63 @@ var benef: Double = 0.0
 //let dailyCost: Double = 4
 var numberOfDays = 0
 
-// calcul du nbres de jours pour que joe puisse partir
-// programme pas correct car ne prend pas en compte la notion de mois
-//while benef < planePrice  {
-//        // daily cost
-//        benef -= 4
-//        if numberOfDays == 1 {
-//            // selling blé
-//            benef += (100 * 0.3)
-//        } else if  numberOfDays == 10 || numberOfDays == 20 {
-//            // selling mouton
-//            benef += (30 * 1)
-//        } else {
-//            // traite vach quotidienne
-//            benef += 30 * 0.50
-//        }
-//    numberOfDays += 1
-//}
-//print("Il aura fallu \(numberOfDays) jours à Joe pour économiser \(benef) €")
-
-
-// setup de la grange [lait, laine, blé]
-
-//while benef < planePrice  {
-//        // daily cost
-//        benef -= 4
-//        if numberOfDays % 30 == 1 {
-//            // selling blé
-//            benef += (100 * 0.3)
-//        } else if  numberOfDays  % 30 == 10 || numberOfDays  % 30 == 20 {
-//            // selling mouton
-//            benef += (30 * 1)
-//        } else {
-//            // traite vach quotidienne
-//            benef += 30 * 0.50
-//        }
-//    numberOfDays += 1
-//}
-//print("Il aura fallu \(numberOfDays) jours à Joe pour économiser \(benef) €")
-
-
-
-
 // utilisation de la capacité de la grange
 var barn = ["milk": 0, "wheat": 0, "wool": 0]
 
-while benef < planePrice  {
-    // daily cost
-    benef -= 4
-    
+
+func calculateBarnSize() -> Int {
     var barnSize = 0
-    for goods in barn {
-        barnSize += goods
+//    le _ est utilisé comme se référant à la clés dans le dico
+    for (_, nbrofGoods) in barn {
+        barnSize += nbrofGoods
     }
+    return barnSize
+}
+
+// daily cost
+func feedCows() {
+    benef -= 4
+}
+
+func sell() {
+    //  il s'agit ici d'optionnel dc on dois le déballer avec le "!" ==> car on sait que c'est != nil
+    benef += Double(barn["milk"]!) * 0.50
+    benef += Double(barn["wheat"]!) * 0.3
+    benef += Double(barn["wool"]!) * 1
     
-    if barnSize >= 500 {
-        benef += Double(barn[0]) * 0.50
-        benef += Double(barn[1]) * 0.3
-        benef += Double(barn[2]) * 1
-        
-    // setup de la grange [lait, laine, blé]
-        barn = [0, 0, 0]
+    // reset de la grange
+    barn = ["milk": 0, "wheat": 0, "wool": 0]
+}
+
+func harvest() {
+    barn["wheat"]! += 100
+}
+
+func mowSheep() {
+    barn["wool"]! += 30
+}
+
+func milkCows() {
+    barn["milk"]! += 30
+}
+
+while benef < planePrice  {
+    feedCows()
+
+    if calculateBarnSize() >= 500 {
+        sell()
+
     } else {
         if numberOfDays % 30 == 1 {
             // selling blé
-            barn[1] += 100
+            harvest()
         } else if  numberOfDays  % 30 == 10 || numberOfDays  % 30 == 20 {
             // selling mouton
-            barn[2] += 30
+            mowSheep()
         } else {
             // traite vach quotidienne
-            barn[0] += 30
+            milkCows()
         }
-        
     }
     numberOfDays += 1
 }
