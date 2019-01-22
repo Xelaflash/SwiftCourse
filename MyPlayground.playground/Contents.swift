@@ -224,3 +224,150 @@ func saluer(_ nom: String) {
     print("Bonjour " + nom)
 }
 saluer("Jean")
+
+print("================================================")
+
+class Personne {
+    var prenom: String
+    var nom: String
+    var age = 0
+    var sexe: Sexe = .femme
+    
+    init(prenom: String, nom: String) {
+        self.prenom = prenom
+        self.nom = nom
+    }
+    
+    func sePresenter() -> String {
+        print("Bonjour, je m'appelle \(prenom) \(nom)")
+        return "Bonjour, je m'appelle \(prenom) \(nom)"
+    }
+    
+    func feterSonAnniversaire() {
+        age += 1
+        print("\(age) an(s)")
+    }
+    
+    static func creerJamesBond() -> Personne {
+        let bond = Personne(prenom: "James", nom: "Bond")
+        bond.age = 40
+        //        print(bond.prenom, bond.nom, bond.age)
+        return bond
+    }
+}
+
+enum Sexe {
+    case homme, femme
+}
+
+class Developpeur: Personne {
+    var ordinateur = "Mac"
+    override func sePresenter() -> String {
+        super.sePresenter()
+        print("et je suis développeur !")
+        return "et je suis développeur !"
+    }
+}
+
+let unDev = Developpeur(prenom: "Steve", nom: "Jobs")
+unDev.sePresenter()
+
+class Traducteur: Personne {
+    var languesConnues = [String]()
+    override func sePresenter() -> String {
+        return "Hello, my name is \(prenom) \(nom)"
+    }
+}
+
+let unTraducteur = Traducteur(prenom: "jean", nom: "boule")
+unTraducteur.sePresenter()
+
+class Athlete: Personne {
+    var recordDu100m = 10.0
+}
+
+var TestPersonne = Personne(prenom: "Claudy", nom: "Faucan")
+TestPersonne.sePresenter()
+TestPersonne.feterSonAnniversaire()
+
+Personne.creerJamesBond()
+
+
+print("================================================")
+
+class Animal {
+    func saluer() {
+        print("Bonjour")
+    }
+    
+    func seDécrire() {
+        print("Je suis un animal.")
+    }
+}
+
+class Chien: Animal {
+    override func saluer() {
+        print("Wouf !")
+    }
+    
+    override func seDécrire() {
+        super.seDécrire()
+        print("Et pas n'importe lequel : un chien !")
+    }
+}
+
+let unChien = Chien()
+unChien.seDécrire()
+
+print("================================================")
+
+// controle du type
+
+class Media {
+    var titre: String
+    init(titre: String) {
+        self.titre = titre
+    }
+}
+
+
+class Film: Media {
+    var réalisateur: String
+    init(titre: String, réalisateur: String) {
+        self.réalisateur = réalisateur
+        super.init(titre: titre)
+    }
+}
+
+class Chanson: Media {
+    var chanteur: String
+    init(titre: String, chanteur: String) {
+        self.chanteur = chanteur
+        super.init(titre: titre)
+    }
+}
+
+let librairie = [
+    Film(titre: "Un balai dans le placard", réalisateur: "Rémi Movie"),
+    Chanson(titre: "L'ombre de ta valise", chanteur: "Frank Patatra"),
+    Chanson(titre: "Toi et moi dans le couloir", chanteur: "Johnny Les Vacances"),
+    Film(titre: "A portée de main", réalisateur: "Stanley Kubik"),
+    Film(titre: "Pourquoi pas ?", réalisateur: "Alfred Plicploc"),
+    Chanson(titre: "De si bon matin", chanteur: "Alain Chausson")
+]
+
+var nombreDeChansons = 0
+
+//Le mot-clé is s'utilise donc avec la syntaxe variable is Type et renvoie un booléen.
+for media in librairie {
+    if media is Chanson { // Ici on contrôle que le media est bien une chanson
+        nombreDeChansons += 1
+    }
+}
+print("La librairie contient \(nombreDeChansons) chansons.")
+
+for media in librairie {
+    if let chanson = media as? Chanson {
+        print(chanson.chanteur)
+    }
+}
