@@ -10,14 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var textInputField: UITextView!
+    @IBOutlet weak var ui_errorLabel: UILabel!
     
-    
-    @IBAction func ShareButtonTouched(_ sender: Any) {
-        let shareController = UIActivityViewController(activityItems: ["test"], applicationActivities : nil)
-        present(shareController, animated: true, completion: nil)
+    @IBAction func ui_shareTypedText() {
+        let inputedText:String = textInputField.text
+        if inputedText.count > 0 {
+            let shareController = UIActivityViewController(activityItems: [inputedText], applicationActivities : nil)
+            shareController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
+            present(shareController, animated: true, completion: nil)
+            ui_errorLabel.text = ""
+        } else {
+            ui_errorLabel.text = "Nothing to share buddy"
+        }
     }
-
-    
     
     
     override func viewDidLoad() {
