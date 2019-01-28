@@ -9,6 +9,13 @@
 import UIKit
 import Foundation
 
+extension Double {
+    func rounded(digits: Int) -> Double {
+        let multiplier = pow(10.0, Double(digits))
+        return (self * multiplier).rounded() / multiplier
+    }
+}
+
 class ViewController: UIViewController {
 //    segment control
     @IBOutlet weak var ui_inputValueType: UISegmentedControl!
@@ -44,8 +51,10 @@ class ViewController: UIViewController {
         
     func convertInputValue() {
         if let inputKilos = getInputKgValue() {
-           ui_outpoutLbsLabel.text = "\(UnitMass.pounds.converter.value(fromBaseUnitValue: inputKilos)) lbs"
-           ui_outpoutKgLabel.text = "\(inputKilos) kg"
+            
+           ui_outpoutLbsLabel.text = "\(UnitMass.pounds.converter.value(fromBaseUnitValue: inputKilos).rounded(digits: 2)) lbs"
+            ui_outpoutKgLabel.text = "\(inputKilos.rounded(digits: 2)) kg"
+
         } else {
             ui_outpoutLbsLabel.text = nil
             ui_outpoutKgLabel.text = nil
