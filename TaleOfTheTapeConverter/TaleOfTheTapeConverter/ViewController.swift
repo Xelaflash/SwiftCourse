@@ -7,14 +7,58 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
+//    segment control
+    @IBOutlet weak var ui_inputValueType: UISegmentedControl!
+    
+// inputs fields
+    @IBOutlet weak var ui_inputWeightValueField: UITextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+// outpout fields
+    @IBOutlet weak var ui_outpoutLbsLabel: UILabel!
+    @IBOutlet weak var ui_outpoutKgLabel: UILabel!
+    
+    
+    
+    func getInputKgValue() -> Double? {
+        let inputKilos:Double?
+        
+        if let inputStringWeight:String = ui_inputWeightValueField.text,
+            let inputDoubleWeight:Double = Double(inputStringWeight) {
+
+            switch ui_inputValueType.selectedSegmentIndex {
+            case 0: // des lb
+                inputKilos = UnitMass.pounds.converter.baseUnitValue(fromValue: inputDoubleWeight)
+            case 1: // des kgs
+                inputKilos = inputDoubleWeight
+            default:
+                inputKilos = nil
+            }
+        } else {
+            inputKilos = nil
+        }
+        return inputKilos
+    }
+        
+    func convertInputValue() {
+        if let inputKilos = getInputKgValue() {
+           ui_outpoutLbsLabel.text = "\(UnitMass.pounds.converter.value(fromBaseUnitValue: inputKilos)) lbs"
+           ui_outpoutKgLabel.text = "\(inputKilos) kg"
+        } else {
+            ui_outpoutLbsLabel.text = nil
+            ui_outpoutKgLabel.text = nil
+        }
+    }
+    
+    
+    @IBAction func inputValueTypeChange() {
+        convertInputValue()
     }
 
-
+    @IBAction func inputValueChanged() {
+        convertInputValue()
+    }
 }
 
