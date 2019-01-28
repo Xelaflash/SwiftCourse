@@ -176,10 +176,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ui_inputHeightValueField" destination="eLD-gQ-uiV" id="I32-h2-CMR"/>
                         <outlet property="ui_inputValueType" destination="VcX-eN-Bz1" id="Tqe-h3-hfb"/>
                         <outlet property="ui_inputWeightValueField" destination="UFV-ZF-eZt" id="xXN-Ma-ubB"/>
                         <outlet property="ui_outpoutKgLabel" destination="AZ7-7U-Lis" id="18C-gT-oMR"/>
                         <outlet property="ui_outpoutLbsLabel" destination="iXc-T0-rmP" id="4ex-mb-N1D"/>
+                        <outlet property="ui_outpoutMetersLabel" destination="2Qo-Pm-jS4" id="Ge9-gT-nAh"/>
+                        <outlet property="ui_outputFtLabel" destination="9Fq-p8-u55" id="lkz-ou-l6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

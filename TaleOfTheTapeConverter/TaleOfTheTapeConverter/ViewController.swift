@@ -22,10 +22,16 @@ class ViewController: UIViewController {
     
 // inputs fields
     @IBOutlet weak var ui_inputWeightValueField: UITextField!
-
+    @IBOutlet weak var ui_inputHeightValueField: UITextField!
+    
 // outpout fields
     @IBOutlet weak var ui_outpoutLbsLabel: UILabel!
     @IBOutlet weak var ui_outpoutKgLabel: UILabel!
+    
+    @IBOutlet weak var ui_outputFtLabel: UILabel!
+    @IBOutlet weak var ui_outpoutMetersLabel: UILabel!
+    
+    
     
     
     
@@ -48,26 +54,59 @@ class ViewController: UIViewController {
         }
         return inputKilos
     }
+
+    
+    func getInputMetersValue() -> Double? {
+        let inputMeters:Double?
         
-    func convertInputValue() {
+        if let inputStringHeight:String = ui_inputHeightValueField.text,
+            let inputDoubleHeight:Double = Double(inputStringHeight) {
+            switch ui_inputValueType.selectedSegmentIndex {
+            case 0: // des foot
+                inputMeters = UnitLength.feet.converter.baseUnitValue(fromValue: inputDoubleHeight)
+            case 1: // des metres
+                inputMeters = inputDoubleHeight
+            default:
+                inputMeters = nil
+            }
+        } else {
+            inputMeters = nil
+        }
+        return inputMeters
+    }
+    
+    
+    
+    func convertKgInputValue() {
         if let inputKilos = getInputKgValue() {
-            
            ui_outpoutLbsLabel.text = "\(UnitMass.pounds.converter.value(fromBaseUnitValue: inputKilos).rounded(digits: 2)) lbs"
             ui_outpoutKgLabel.text = "\(inputKilos.rounded(digits: 2)) kg"
-
         } else {
             ui_outpoutLbsLabel.text = nil
             ui_outpoutKgLabel.text = nil
         }
     }
+   
+    func convertMetersInputValue() {
+        if let inputMeters = getInputMetersValue() {
+            ui_outputFtLabel.text = "\(UnitLength.feet.converter.value(fromBaseUnitValue: inputMeters).rounded(digits: 2)) feet"
+            ui_outpoutMetersLabel.text = "\(inputMeters.rounded(digits: 2)) kg"
+        } else {
+            ui_outputFtLabel.text = nil
+            ui_outpoutMetersLabel.text = nil
+        }
+    }
+    
     
     
     @IBAction func inputValueTypeChange() {
-        convertInputValue()
+        convertKgInputValue()
+        convertMetersInputValue()
     }
 
     @IBAction func inputValueChanged() {
-        convertInputValue()
+        convertKgInputValue()
+        convertMetersInputValue()
     }
 }
 
