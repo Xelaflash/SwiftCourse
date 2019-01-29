@@ -61,7 +61,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
-    
-
-    
 }
