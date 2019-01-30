@@ -89,7 +89,7 @@ let newAdress = Adresse(voie: "7 allée mon cul", ville: "Bordeaux" ,pays: "Fran
 newAdress.afficher()
 
 
-
+// ================================================================
 
 func ajouteDeux(x: Int) -> Int {
     return x + 2
@@ -115,3 +115,38 @@ var a = 2
 for maFonction in mesFonctions {
     a = maFonction(a)
 }
+
+
+// EXO
+//Vous devez compléter la fonction obtenirDivision. Cette fonction renvoie une des deux fonctions au dessus en fonction de la parité de son paramètre x. Vous noterez que le type de retour de cette fonction corresponds bien au type des deux fonctions du dessus. Ensuite, vous devez utiliser la fonction obtenirDivision pour compléter la boucle.
+
+func diviserNombrePairParDeux(x: Int) -> Int {
+    return x / 2
+}
+
+func diviserNombreImpairParDeux(x: Int) -> Int {
+    return (x + 1) / 2
+}
+
+func obtenirDivision(x: Int) -> (Int) -> (Int) {
+    if (x % 2 == 0) {
+        return diviserNombrePairParDeux(x:)
+    } else {
+        return diviserNombreImpairParDeux(x:)
+    }
+}
+
+let tableau = [2, 12, 3, 14, 76, 19, 7, 22]
+var somme = 0
+
+for nombre in tableau {
+    let division = obtenirDivision(x: nombre)
+    division(nombre)
+    somme += division(nombre)
+}
+
+// =================== END EXO ==============================
+
+
+
+
