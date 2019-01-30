@@ -14,8 +14,8 @@
 		ABA6F9472201E6D700E6F98A /* Balham.otf in Resources */ = {isa = PBXBuildFile; fileRef = ABA6F9462201E6D700E6F98A /* Balham.otf */; };
 		ABA6F9492201ECE200E6F98A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA6F9482201ECE200E6F98A /* Assets.xcassets */; };
 		ABA6F9502201F18000E6F98A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6F94F2201F18000E6F98A /* Question.swift */; };
-		ABA6F9522201FCE000E6F98A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6F9512201FCE000E6F98A /* Game.swift */; };
 		ABA6F9542202041100E6F98A /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6F9532202041100E6F98A /* QuestionManager.swift */; };
+		ABA6F95A22020DBE00E6F98A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA6F95922020DBE00E6F98A /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		ABA6F9462201E6D700E6F98A /* Balham.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Balham.otf; sourceTree = "<group>"; };
 		ABA6F9482201ECE200E6F98A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA6F94F2201F18000E6F98A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		ABA6F9512201FCE000E6F98A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		ABA6F9532202041100E6F98A /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		ABA6F95922020DBE00E6F98A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				ABA6F94F2201F18000E6F98A /* Question.swift */,
-				ABA6F9512201FCE000E6F98A /* Game.swift */,
 				ABA6F9532202041100E6F98A /* QuestionManager.swift */,
+				ABA6F95922020DBE00E6F98A /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,10 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA6F9502201F18000E6F98A /* Question.swift in Sources */,
+				ABA6F95A22020DBE00E6F98A /* Game.swift in Sources */,
 				ABA6F9372201CFD200E6F98A /* ViewController.swift in Sources */,
 				ABA6F9352201CFD200E6F98A /* AppDelegate.swift in Sources */,
 				ABA6F9542202041100E6F98A /* QuestionManager.swift in Sources */,
-				ABA6F9522201FCE000E6F98A /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
