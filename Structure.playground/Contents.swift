@@ -65,3 +65,53 @@ let s = RectangleStruct(largeur: 10, hauteur: 5)
 //Apple recommande de plus en plus, l'utilisation des structures au lieu des classes. Donc, n'oubliez pas de suivre les suggestions d'utilisation les concernant !
 //
 //Tous les types simples que vous connaissez : Int, Double, Float, String, Bool, Dictionnaire, Tableau sont des structures en Swift.
+
+
+struct Adresse {
+    var voie:String = "75 avenue des Champs-Elysées"
+    var ville:String = "Paris"
+    var pays:String = "France"
+    var codePostal:String = "75007"
+    
+//    init(voie: String, ville: String, pays: String, codePostal: String) {
+//        self.voie = voie
+//        self.ville = ville
+//        self.pays = pays
+//        self.codePostal = codePostal
+//    }
+    
+    func afficher() {
+        print("\(voie), \(codePostal) \(ville), \(pays)")
+    }
+}
+
+let newAdress = Adresse(voie: "7 allée mon cul", ville: "Bordeaux" ,pays: "France" , codePostal: "33000" )
+newAdress.afficher()
+
+
+
+
+func ajouteDeux(x: Int) -> Int {
+    return x + 2
+}
+
+func multiplieParTrois(x: Int) -> Int {
+    return x * 3
+}
+
+func soustraitQuatre(x: Int) -> Int {
+    return x - 4
+}
+
+func multiplieParDeux(x: Int) -> Int {
+    return x * 2
+}
+
+//Ces quatre fonctions sont du même type : (Int) -> Int. Donc on peut créer un tableau qui les regroupe toutes :
+var mesFonctions = [ajouteDeux(x:), multiplieParTrois(x:), soustraitQuatre(x:), multiplieParDeux(x:)]
+
+// Ce tableau est donc du type [(Int) -> Int]. Maintenant je peux, par exemple, faire une boucle for pour parcourir mon tableau :
+var a = 2
+for maFonction in mesFonctions {
+    a = maFonction(a)
+}
