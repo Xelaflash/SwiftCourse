@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let name = Notification.Name(rawValue: "QuestionsLoaded")
         NotificationCenter.default.addObserver(self, selector: #selector(questionsLoaded), name: name, object: nil)
+//         on lance une partie direct au load de l'app
+        startNewGame()
     }
     
      @objc func questionsLoaded() {
