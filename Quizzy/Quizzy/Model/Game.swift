@@ -32,9 +32,12 @@ class Game {
         QuestionManager.shared.get { (questions) in
             self.questions = questions
             self.state = .ongoing
+//            sending a notification when answer loaded to the controlle (blind communication)
             let name = Notification.Name(rawValue: "QuestionsLoaded")
             let notification = Notification(name: name)
             NotificationCenter.default.post(notification)
+//            same but in one line
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "QuestionsReceived"), object: nil)
         }
     }
 
