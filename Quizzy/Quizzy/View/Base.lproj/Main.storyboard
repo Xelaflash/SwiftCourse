@@ -39,7 +39,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-3J-ewp">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-3J-ewp" customClass="QuestionView" customModule="Quizzy" customModuleProvider="target">
                                 <rect key="frame" x="37" y="64" width="300" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -50,12 +50,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="vGV-7z-rHJ">
-                                        <rect key="frame" x="130" y="191" width="40" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon Error" translatesAutoresizingMaskIntoConstraints="NO" id="XW8-3A-cuH">
+                                        <rect key="frame" x="130" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="icon" destination="XW8-3A-cuH" id="iGt-Nh-Gf1"/>
+                                    <outlet property="label" destination="JMp-hq-fiU" id="ydq-5D-Ebu"/>
+                                </connections>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="V2p-0z-uSe">
                                 <rect key="frame" x="169" y="596" width="37" height="37"/>
@@ -73,6 +77,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon Correct" width="36" height="35"/>
+        <image name="Icon Error" width="36" height="35"/>
     </resources>
 </document>

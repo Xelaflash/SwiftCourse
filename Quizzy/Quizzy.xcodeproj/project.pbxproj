@@ -64,6 +64,7 @@
 		ABA6F9332201CFD200E6F98A /* Quizzy */ = {
 			isa = PBXGroup;
 			children = (
+				ABA6F9482201ECE200E6F98A /* Assets.xcassets */,
 				ABA6F94A2201EFD900E6F98A /* Model */,
 				ABA6F94D2201EFFB00E6F98A /* Controller */,
 				ABA6F94B2201EFE700E6F98A /* View */,
@@ -103,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				ABA6F93D2201CFD300E6F98A /* LaunchScreen.storyboard */,
-				ABA6F9482201ECE200E6F98A /* Assets.xcassets */,
 				ABA6F9342201CFD200E6F98A /* AppDelegate.swift */,
 				ABA6F9402201CFD300E6F98A /* Info.plist */,
 				ABA6F9462201E6D700E6F98A /* Balham.otf */,
