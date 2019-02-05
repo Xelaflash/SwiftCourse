@@ -24,17 +24,17 @@ class QuestionView: UIView {
         switch style {
         case .correct:
 //            backgroundColor = UIColor(red: 200.0/255.0, green: 236.0/255.0, blue: 160.0/255.0, alpha: 1)
-            backgroundColor = #colorLiteral(red: 0, green: 0.8385797143, blue: 0.6182498932, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
             icon.image = #imageLiteral(resourceName: "Icon Correct")
             icon.isHidden = false
         case .incorrect:
 //            backgroundColor = UIColor(red: 243.0/255.0, green: 135.0/255.0, blue: 148.0/255.0, alpha: 1)
-            backgroundColor = #colorLiteral(red: 1, green: 0.2546873391, blue: 0.2968834937, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.5294117647, blue: 0.5803921569, alpha: 1)
             icon.image = #imageLiteral(resourceName: "Icon Error")
             icon.isHidden = false
         case .standard:
 //            backgroundColor = UIColor(red: 191.0/255.0, green: 196.0/255.0, blue: 201.0/255.0, alpha: 1)
-            backgroundColor = #colorLiteral(red: 0.8143808246, green: 0.8472908139, blue: 0.8818879128, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             icon.isHidden = true
         }
     }
