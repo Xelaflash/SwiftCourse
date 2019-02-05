@@ -101,12 +101,19 @@ class ViewController: UIViewController {
             break
         }
         scoreLabel.text = "\(game.score) / 10"
+        questionView.transform = .identity
+        questionView.style = .standard
+        
+        switch game.state {
+        case .ongoing:
+            questionView.title = game.currentQuestion.title
+        case .over:
+            questionView.title = "Game is Over.\n\nYour score is : \n\(game.score) / 10"
+        }
     }
     
     private func showQuestionView() {
-        questionView.transform = .identity
-        questionView.style = .standard
-        questionView.title = game.currentQuestion.title
+
     }
     
 
