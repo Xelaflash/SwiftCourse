@@ -18,12 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading-1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-Ne-FV1">
-                                <rect key="frame" x="69" y="176" width="236" height="299"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-Ne-FV1">
+                                <rect key="frame" x="69" y="176" width="237" height="299"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.22478425499999999" green="0.54069083929999995" blue="0.7843458056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cJY-Ne-FV1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="156" id="6Z6-3I-Igo"/>
+                            <constraint firstItem="cJY-Ne-FV1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="HAq-vs-NRn"/>
+                            <constraint firstItem="cJY-Ne-FV1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hEF-UJ-DPc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cJY-Ne-FV1" secondAttribute="bottom" constant="192" id="xOy-tP-z0c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
