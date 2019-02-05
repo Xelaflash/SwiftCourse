@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var game = Game()
     
     //    recuperation taille (width) ecran
-    var screenWidth = UIScreen.main.bounds.width
+    let screenWidth = UIScreen.main.bounds.width
     
     
     @IBAction func didTapNewGameButton() {
@@ -101,6 +101,23 @@ class ViewController: UIViewController {
             break
         }
         scoreLabel.text = "\(game.score) / 10"
+
+//        animation de question view
+        var translationTransform: CGAffineTransform
+        if questionView.style == .correct {
+            translationTransform = CGAffineTransform(translationX: screenWidth, y: 0)
+        } else {
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.questionView.transform = translationTransform }, completion: { (success) in
+                if success {
+                    self.showQuestionView()
+                }
+        })
+    }
+    
+    private func showQuestionView() {
         questionView.transform = .identity
         questionView.style = .standard
         
@@ -108,14 +125,12 @@ class ViewController: UIViewController {
         case .ongoing:
             questionView.title = game.currentQuestion.title
         case .over:
-            questionView.title = "Game is Over.\n\nYour score is : \n\(game.score) / 10"
+             questionView.title = "Game is Over.\n\nYour score is : \n\(game.score) / 10"
         }
+        questionView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.questionView.transform = .identity
+        }, completion: nil)
     }
-    
-    private func showQuestionView() {
-
-    }
-    
-
 }
 
