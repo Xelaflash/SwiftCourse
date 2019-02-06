@@ -9,10 +9,17 @@
 import Foundation
 
 class GoalManager {
-     private var _goalList:[String]
+    private var _goalList:[String]
+//    constante qui stocke le nom de la key
+    private let GOAL_LIST_KEY = "GoalListUser"
     
     init() {
-        _goalList = []
+//        recupere les données du user lors du load de l'app
+        if let loadedGoalList = UserDefaults.standard.array(forKey: GOAL_LIST_KEY) as? [String] {
+            _goalList = loadedGoalList
+        } else {
+            _goalList = []
+        }
     }
     
     func getGoalCount() -> Int {
@@ -28,6 +35,7 @@ class GoalManager {
         if text.count > 0 {
             _goalList.append(text)
             newIndex = _goalList.count - 1
+            UserDefaults.standard.set(_goalList, forKey: GOAL_LIST_KEY)
         } else {
             newIndex = nil
         }
