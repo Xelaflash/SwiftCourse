@@ -21,7 +21,6 @@ class EditCredentialViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveAndReturnToListSegue" {
-            print("weshould save the edits")
             if let title = ui_titlefield.text,
                 let login = ui_loginField.text,
                 let password = ui_passwordField.text,
