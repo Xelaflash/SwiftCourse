@@ -1,0 +1,6 @@
+framework module Pods_Pwd_Safe {
+  umbrella header "Pods-Pwd Safe-umbrella.h"
+
+  export *
+  module * { export * }
+}
