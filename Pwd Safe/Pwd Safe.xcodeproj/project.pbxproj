@@ -14,6 +14,7 @@
 		ABD71EB4221599D400F194E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD71EB3221599D400F194E6 /* Assets.xcassets */; };
 		ABD71EB7221599D400F194E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD71EB5221599D400F194E6 /* LaunchScreen.storyboard */; };
 		ABD71EC02215A18500F194E6 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD71EBF2215A18500F194E6 /* Credentials.swift */; };
+		ABD71EC22215A41A00F194E6 /* CredentialsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD71EC12215A41A00F194E6 /* CredentialsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		ABD71EB6221599D400F194E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD71EB8221599D400F194E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD71EBF2215A18500F194E6 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		ABD71EC12215A41A00F194E6 /* CredentialsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsManager.swift; sourceTree = "<group>"; };
 		C5972B0F2D6BCF19782E0E73 /* Pods-Pwd Safe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pwd Safe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pwd Safe/Pods-Pwd Safe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD71EBF2215A18500F194E6 /* Credentials.swift */,
+				ABD71EC12215A41A00F194E6 /* CredentialsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD71EC22215A41A00F194E6 /* CredentialsManager.swift in Sources */,
 				ABD71EC02215A18500F194E6 /* Credentials.swift in Sources */,
 				ABD71EAF221599D200F194E6 /* ViewController.swift in Sources */,
 				ABD71EAD221599D200F194E6 /* AppDelegate.swift in Sources */,
