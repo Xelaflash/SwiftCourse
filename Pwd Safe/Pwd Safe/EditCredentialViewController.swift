@@ -19,6 +19,19 @@ class EditCredentialViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveAndReturnToListSegue" {
+            print("weshould save the edits")
+            if let title = ui_titlefield.text,
+                let login = ui_loginField.text,
+                let password = ui_passwordField.text,
+                let url = ui_urlField.text {
+                let credentialsManager = CredentialsManager()
+                _ = credentialsManager.addcredentials(title: title, login: login, password: password, url: url)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

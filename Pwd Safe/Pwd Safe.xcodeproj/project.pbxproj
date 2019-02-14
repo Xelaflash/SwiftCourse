@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		56157C6FCF9D21759C940E36 /* Pods_Pwd_Safe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABF0428368957F5B25ADEE5 /* Pods_Pwd_Safe.framework */; };
 		ABD71EAD221599D200F194E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD71EAC221599D200F194E6 /* AppDelegate.swift */; };
-		ABD71EAF221599D200F194E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD71EAE221599D200F194E6 /* ViewController.swift */; };
+		ABD71EAF221599D200F194E6 /* CredentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD71EAE221599D200F194E6 /* CredentialViewController.swift */; };
 		ABD71EB2221599D200F194E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD71EB0221599D200F194E6 /* Main.storyboard */; };
 		ABD71EB4221599D400F194E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD71EB3221599D400F194E6 /* Assets.xcassets */; };
 		ABD71EB7221599D400F194E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD71EB5221599D400F194E6 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		7ABF0428368957F5B25ADEE5 /* Pods_Pwd_Safe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pwd_Safe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD71EA9221599D200F194E6 /* Pwd Safe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pwd Safe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD71EAC221599D200F194E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABD71EAE221599D200F194E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABD71EAE221599D200F194E6 /* CredentialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialViewController.swift; sourceTree = "<group>"; };
 		ABD71EB1221599D200F194E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABD71EB3221599D400F194E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABD71EB6221599D400F194E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			children = (
 				ABD71EBE2215A15300F194E6 /* Model */,
 				ABD71EAC221599D200F194E6 /* AppDelegate.swift */,
-				ABD71EAE221599D200F194E6 /* ViewController.swift */,
+				ABD71EAE221599D200F194E6 /* CredentialViewController.swift */,
 				ABD71EB0221599D200F194E6 /* Main.storyboard */,
 				ABD71EB3221599D400F194E6 /* Assets.xcassets */,
 				ABD71EB5221599D400F194E6 /* LaunchScreen.storyboard */,
@@ -224,7 +224,7 @@
 			files = (
 				ABD71EC22215A41A00F194E6 /* CredentialsManager.swift in Sources */,
 				ABD71EC02215A18500F194E6 /* Credentials.swift in Sources */,
-				ABD71EAF221599D200F194E6 /* ViewController.swift in Sources */,
+				ABD71EAF221599D200F194E6 /* CredentialViewController.swift in Sources */,
 				ABD71EC62215BA7800F194E6 /* EditCredentialViewController.swift in Sources */,
 				ABD71EAD221599D200F194E6 /* AppDelegate.swift in Sources */,
 				ABD71EC42215B20200F194E6 /* CredentialListViewController.swift in Sources */,
